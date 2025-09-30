@@ -5,8 +5,10 @@ import random
 from tkinter import *
 import tkinter.messagebox
 
+# this is how i do while loops
 prgm = 1
 
+# class and list for all questions in the studyset. yes it is hardcoded 
 @dataclass
 class qapair:
   qtext: str
@@ -39,7 +41,7 @@ qlist=[q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,q11,q12,q13,q14,q15,q16,q17,q18,q19,q20,q2
 # pull system time at runtime and save it to a variable
 while prgm== 1:
     stime1 = datetime.now()
-    print ("penis", stime1) 
+    print ("stime1", stime1) 
     sleep (5)
     stime2 = datetime.now()
     print (stime2)
