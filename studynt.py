@@ -7,10 +7,6 @@ import tkinter.messagebox
 import tkinter.simpledialog
 from easygui import *
 
-
-# this is how i do while loops
-prgm = 1
-
 # class and list for all questions in the studyset. yes it is hardcoded 
 @dataclass
 class qapair:
@@ -47,7 +43,6 @@ ranq=0
 uans=0
 
  # ui time: initial prompt
-
 qtitle="ANSWER NOW RIGHT NOW NOW"
  # ui time: wrong prompt
 qwrong="WRONG. DO IT AGAIN"
@@ -57,14 +52,15 @@ ok_btn="darn"
 
 # pull system time at runtime and save it to a variable
 while uans!= qlist[ranq].qans:
+   # obsolete stuff i'm keeping here just in case
    # stime1 = datetime.now()
    # print ("stime1", stime1) 
-    sleep (10)
+    sleep (60)
    # stime2 = datetime.now()
    # print (stime2)
    # if stime2 != stime1:
     chancer = random.randint (0,19)
-    if chancer >= 12:
+    if chancer >= 10:
         ranq = random.randint (0,21)
         print (ranq)
         print (qlist[ranq].qtext)
