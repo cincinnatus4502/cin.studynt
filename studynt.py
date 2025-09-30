@@ -42,20 +42,45 @@ q22=qapair("Remote Desktop Protocol","3389")
 # list to end all lists
 qlist=[q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,q11,q12,q13,q14,q15,q16,q17,q18,q19,q20,q21,q22]
 
-# ui time
-qmsg = "What port # is this?"
+# pre define uans and ranq
+ranq=0
+uans=0
+
+ # ui time: initial prompt
+
 qtitle="ANSWER NOW RIGHT NOW NOW"
-qtextbox=""
-uans = textbox(qmsg,qtitle)
+ # ui time: wrong prompt
+qwrong="WRONG. DO IT AGAIN"
+ # ui time: really wrong prompt
+qwmsg="EXTREMELY LOUD INCORRECT BUZZER"
+ok_btn="darn"
 
 # pull system time at runtime and save it to a variable
-while prgm== 1:
-    stime1 = datetime.now()
-    print ("stime1", stime1) 
-    sleep (5)
-    stime2 = datetime.now()
-    print (stime2)
-    if stime2 != stime1:
+while uans!= qlist[ranq].qans:
+   # stime1 = datetime.now()
+   # print ("stime1", stime1) 
+    sleep (10)
+   # stime2 = datetime.now()
+   # print (stime2)
+   # if stime2 != stime1:
+    chancer = random.randint (0,19)
+    if chancer >= 12:
         ranq = random.randint (0,21)
         print (ranq)
         print (qlist[ranq].qtext)
+        qmsg = f"What port # is {qlist[ranq].qtext}?"
+        uans = textbox(qmsg,qtitle)
+        if uans== qlist[ranq].qans:
+            print ("hooray. correct")
+            uans=0
+        else:
+            print ("wrong")
+            uans = textbox(qmsg,qwrong)
+            if uans!=qlist[ranq].qans:
+              qwrong2=f"WRONG AGAIN. ITS {qlist[ranq].qans}"
+              msgbox(qwrong2,qwmsg,ok_btn)
+              continue
+            else:
+              print ("hooray. correct")
+              uans=0
+    else: uans==0
