@@ -4,6 +4,9 @@ from time import sleep
 import random
 from tkinter import *
 import tkinter.messagebox
+import tkinter.simpledialog
+from easygui import *
+
 
 # this is how i do while loops
 prgm = 1
@@ -36,7 +39,14 @@ q20=qapair("SQL","1433")
 q21=qapair("MySQL","3306")
 q22=qapair("Remote Desktop Protocol","3389")
 
+# list to end all lists
 qlist=[q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,q11,q12,q13,q14,q15,q16,q17,q18,q19,q20,q21,q22]
+
+# ui time
+qmsg = "What port # is this?"
+qtitle="ANSWER NOW RIGHT NOW NOW"
+qtextbox=""
+uans = textbox(qmsg,qtitle)
 
 # pull system time at runtime and save it to a variable
 while prgm== 1:
